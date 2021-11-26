@@ -42,6 +42,16 @@ def values():
 
     return make_response(jsonify(values), 200)
 
+@app.route('/post', methods=['POST'])
+def post(): 
+
+    try: 
+        print(request.json())
+    except: 
+        print(request.text)
+
+    return make_response('ok', 200)
+
 
 
 if __name__ == "__main__":

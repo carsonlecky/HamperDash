@@ -1,6 +1,7 @@
 from flask import Flask, request, session, redirect, make_response, jsonify, render_template
 import random
 import requests
+import json
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
@@ -45,10 +46,9 @@ def values():
 @app.route('/post', methods=['POST'])
 def post(): 
 
-    try: 
-        print(request.json())
-    except: 
-        print(request.text)
+    
+    print(request.json())
+   
 
     return make_response('ok', 200)
 
